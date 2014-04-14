@@ -13,20 +13,26 @@ public class enemyCannon : MonoBehaviour {
 
 	public float velMult;
 
+	private int health;
+
 	// Use this for initialization
 	void Start () {
+		health = 10;
 
 		StartCoroutine (fireLoop ());
 	}
 	
 	// Update is called once per frame
 	IEnumerator fireLoop () {
-		while (true) {
+		while (health > 0) {
 			calculateAngle ();
 			yield return new WaitForSeconds(2f);
 			launch();
 			yield return null;
 		}
+		gameObject.AddComponent<Rigidbody> ();
+		rigidbody.useGravity = true;
+		Destroy (gameObject.GetComponent<oscillate> ());
 	}
 
 
@@ -35,9 +41,9 @@ public class enemyCannon : MonoBehaviour {
 		distance =  firePoint.transform.position - player.transform.position;
 
 		float v = initialVelocity * initialVelocity;
-		float g = Physics.gravity.y;//Mathf.Abs(Physics.gravity.y);
-		float x = distance.x;//Mathf.Abs(distance.x);
-		float y = distance.y;//Mathf.Abs(distance.y);
+		float g = Physics.gravity.y;
+		float x = distance.x;
+		float y = distance.y;
 
 		angle = Mathf.Atan ((v - Mathf.Sqrt (v * v - g * (g * x * x + 2 * y * v))) / (g * x));
 
@@ -52,6 +58,10 @@ public class enemyCannon : MonoBehaviour {
 		projectile.transform.position = firePoint.transform.position;
 		projectile.rigidbody.velocity = (firePoint.transform.position - transform.position) * velMult;
 
+	}
+
+	void OnCollisionEnter(){
+		health--;
 	}
 
 }

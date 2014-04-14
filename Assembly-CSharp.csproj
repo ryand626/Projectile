@@ -50,7 +50,9 @@
      <Compile Include="Assets\Scripts\fire.cs" />
      <Compile Include="Assets\Scripts\predict.cs" />
      <Compile Include="Assets\enemyCannon.cs" />
+     <Compile Include="Assets\music.cs" />
      <Compile Include="Assets\oscillate.cs" />
+     <Compile Include="Assets\sploosh.cs" />
      <Compile Include="Assets\target.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

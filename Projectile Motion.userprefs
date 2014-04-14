@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\Chem\Assets\Scripts\gridManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\enemyCannon.cs">
     <Files>
-      <File FileName="..\Chem\Assets\Scripts\gridManager.cs" Line="118" Column="5" />
+      <File FileName="Assets\sploosh.cs" Line="7" Column="31" />
+      <File FileName="Assets\oscillate.cs" Line="16" Column="102" />
+      <File FileName="Assets\enemyCannon.cs" Line="33" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
